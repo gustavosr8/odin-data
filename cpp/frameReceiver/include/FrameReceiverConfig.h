@@ -106,6 +106,8 @@ public:
       rx_name_map["ZMQ"]  = Defaults::RxTypeZMQ;
       rx_name_map["tcp"]  = Defaults::RxTypeTCP;
       rx_name_map["TCP"]  = Defaults::RxTypeTCP;
+      rx_name_map["generic"]  = Defaults::RxTypeGeneric;
+      rx_name_map["GENERIC"]  = Defaults::RxTypeGeneric;
     }
 
     if (rx_name_map.count(rx_name)){
@@ -126,6 +128,7 @@ public:
       rx_type_map[Defaults::RxTypeUDP] = "udp";
       rx_type_map[Defaults::RxTypeZMQ] = "zmq";
       rx_type_map[Defaults::RxTypeTCP] = "tcp";
+      rx_type_map[Defaults::RxTypeGeneric] = "generic";
       rx_type_map[Defaults::RxTypeIllegal] = "unknown";
     }
 
@@ -210,6 +213,7 @@ private:
   friend class FrameReceiverUDPRxThread;
   friend class FrameReceiverZMQRxThread;
   friend class FrameReceiverTCPRxThread;
+  friend class FrameReceiverGenericRxThread;
   friend class FrameReceiverConfigTestProxy;
   friend class FrameReceiverRxThreadTestProxy;
 };

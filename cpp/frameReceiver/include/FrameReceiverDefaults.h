@@ -25,7 +25,8 @@ enum RxType
   RxTypeIllegal = -1,
   RxTypeUDP,
   RxTypeZMQ,
-  RxTypeTCP
+  RxTypeTCP,
+  RxTypeGeneric
 };
 
 const std::size_t  default_max_buffer_mem         = 1048576;

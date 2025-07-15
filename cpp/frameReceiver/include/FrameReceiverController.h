@@ -28,6 +28,7 @@
 #include "FrameReceiverUDPRxThread.h"
 #include "FrameReceiverZMQRxThread.h"
 #include "FrameReceiverTCPRxThread.h"
+#include "FrameReceiverGenericRxThread.h"
 #include "FrameDecoder.h"
 #include "OdinDataException.h"
 #include "ClassLoader.h"

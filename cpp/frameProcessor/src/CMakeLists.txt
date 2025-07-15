@@ -46,6 +46,9 @@ install(TARGETS frameProcessor RUNTIME DESTINATION bin)
 add_library(DummyUDPProcessPlugin SHARED DummyUDPProcessPlugin.cpp DummyUDPProcessPluginLib.cpp)
 target_link_libraries(DummyUDPProcessPlugin ${LIB_PROCESSOR} ${Boost_LIBRARIES} ${LOG4CXX_LIBRARIES} ${ZEROMQ_LIBRARIES} ${HDF5_LIBRARIES} ${HDF5_HL_LIBRARIES} ${COMMON_LIBRARY})
 install(TARGETS DummyUDPProcessPlugin DESTINATION lib)
+add_library(DummySHMProcessPlugin SHARED DummySHMProcessPlugin.cpp DummySHMProcessPluginLib.cpp)
+target_link_libraries(DummySHMProcessPlugin ${LIB_PROCESSOR} ${Boost_LIBRARIES} ${LOG4CXX_LIBRARIES} ${ZEROMQ_LIBRARIES} ${HDF5_LIBRARIES} ${HDF5_HL_LIBRARIES} ${COMMON_LIBRARY})
+install(TARGETS DummySHMProcessPlugin DESTINATION lib)
 
 # Add library for Blosc plugin
 if (${BLOSC_FOUND})
