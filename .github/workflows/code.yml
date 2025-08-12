@@ -23,7 +23,6 @@ jobs:
           INSTALL_PREFIX: ${{ env.INSTALL_PREFIX }}
         run: |
           echo "INSTALL_PREFIX is ${INSTALL_PREFIX}"
-          mkdir -p $INSTALL_PREFIX
           mkdir build && cd build
           cmake -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX ../cpp
           make -j8 VERBOSE=1 && make install VERBOSE=1
