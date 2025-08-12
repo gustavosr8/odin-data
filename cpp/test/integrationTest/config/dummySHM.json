@@ -1,0 +1,38 @@
+{
+    "Main": {
+        "receiver": {
+            "process": true,
+            "command": "${CMAKE_INSTALL_PREFIX}/bin/frameReceiver",
+            "pos-args": "",
+            "sleep": "1"
+        },
+        "processor": {
+            "process": true,
+            "command": "${CMAKE_INSTALL_PREFIX}/bin/frameProcessor",
+            "pos-args": "",
+            "sleep": "1",
+            "socket": "tcp://0.0.0.0:5004"
+        },
+        "simulator": {
+            "process": true,
+            "command": "~/repos/shm-detector-sim/builddir/shm-detector-sim",
+            "pos-args": "-s ${simulator.shm-name} -e ${simulator.half-frames} -t ${simulator.exptime} -f ${simulator.frames-per-buffer} -b ${simulator.num-buffers} -n ${simulator.num-frames}",
+            "sleep": "10"
+        }
+    },
+    "simulator": {
+        "lib-path": "${CMAKE_INSTALL_PREFIX}/lib",
+        "shm-name": "launch-detector-1",
+        "half-frames": "1",
+        "exptime": "1",
+        "frames-per-buffer": "1",
+        "num-buffers": "10",
+        "num-frames": "10"
+    },
+    "receiver": {
+        "config": "${CMAKE_INSTALL_PREFIX}/test_config/dummySHM-fr.json"
+    },
+    "processor": {
+        "config": "${CMAKE_INSTALL_PREFIX}/test_config/dummySHM-fp.json"
+    }
+}

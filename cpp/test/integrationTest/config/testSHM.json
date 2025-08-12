@@ -3,9 +3,9 @@
     {
         "output_file": "/tmp/test_1_000001.h5",
         "frames": "10",
-        "dimensions": "3",
-        "width": "1400",
-        "height": "1024",
+        "dimensions": "2",
+        "width": "448",
+        "height": "256",
     	"dataset": "dummy",
         "type": "uint16",
         "data": {
